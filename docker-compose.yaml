@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  api-poc-kafka-python:
+    container_name: api-poc-kafka-python
+    build: api
+    ports:
+      - "2050:2050"
+    environment:
+      MODULE_NAME: "app.main"
+      MAX_WORKERS: "1"
+    volumes:
+      - ./logs:/usr/src/app/logs
